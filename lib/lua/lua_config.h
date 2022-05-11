@@ -27,6 +27,8 @@
 #define LUA_COMPAT_APIINTCASTS
 #include <lauxlib.h>
 #include <lualib.h>
+
+#include "lua_compat.h"
 #endif
 
 #ifdef __cplusplus

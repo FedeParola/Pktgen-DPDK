@@ -264,15 +264,6 @@ msghandler(lua_State *L)
     return 1;                     /* return the traceback */
 }
 
-static int
-_k(lua_State *L, int status, lua_KContext ctx)
-{
-    (void)L;
-    (void)ctx;
-
-    return status;
-}
-
 int
 lua_docall(lua_State *L, int narg, int nres)
 {
@@ -284,7 +275,7 @@ lua_docall(lua_State *L, int narg, int nres)
     lua_pushcfunction(L, msghandler);
     lua_insert(L, base);
 
-    status = _k(L, lua_pcallk(L, narg, nres, base, 0, _k), 0);
+    status = lua_pcall(L, narg, nres, base);
 
     return status;
 }

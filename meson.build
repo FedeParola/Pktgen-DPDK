@@ -45,7 +45,7 @@ if get_option('enable_lua')
 	message('>>>>>>>>>>>>> Lua enabled <<<<<<<<<<<<<<')
 	add_project_arguments('-DLUA_ENABLED', language: 'c')
 
-	lua_names = ['lua', 'lua-5.3', 'lua5.3', 'lua-5.4', 'lua5.4']
+	lua_names = ['luajit']
 	foreach n:lua_names
 		lua_dep = dependency(n, required: false)
 		if not lua_dep.found()

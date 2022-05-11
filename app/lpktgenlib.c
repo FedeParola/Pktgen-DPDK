@@ -115,7 +115,7 @@ getf_integer(lua_State *L, const char *field)
     uint32_t value = 0;
 
     lua_getfield(L, 3, field);
-    if (lua_isinteger(L, -1))
+    if (lua_isnumber(L, -1))
         value = luaL_checkinteger(L, -1);
     lua_pop(L, 1);
 

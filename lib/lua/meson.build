@@ -3,6 +3,7 @@
 
 if get_option('enable_lua')
 	sources = files(
+		'lua_compat.c',
 		'lua_config.c',
 		'lua_dapi.c',
 		'lua_dpdk.c',
